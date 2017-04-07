@@ -1,0 +1,14 @@
+<div class="title">
+  <h1>Where would you like to stay?</h1>
+</div>
+<section>
+  <div ng-repeat="place in lodging">
+    <div class="tabInfo">
+      <img src="#" alt="a picture of a hotel">
+      <p>{{place.name}}</p>
+      <p>{{place.address}}</p>
+      <p>${{place.price}} a night</p>
+      <p>{{place.rating}}</p>
+    </div>
+  </div>
+</section>

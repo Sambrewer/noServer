@@ -19,27 +19,18 @@
       </div>
     </div>
   </section>
-  <section>
+  <div class="breaker">
+    <img src="../images/newspaper-rock.jpg" alt="Newspaper Rock">
+  </div>
+  <section class="teaserSection" ng-controller="teaserCtrl">
     <div class="row">
-      <div class="col-md-4">
-        <img ng-src="../images/sanjuan.png" alt="The Mighty San Juan River">
-      </div>
-      <div class="col-md-4">
-        <img ng-src="../images/monumentvalley.jpg" alt="Majestic Monument Valley">
-      </div>
-      <div class="col-md-4">
-        <img ng-src="../images/bearsears.png" alt="Newly Designated Bears Ears Natl Monument">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <img ng-src="../images/lakepowell.png" alt="">
-      </div>
-      <div class="col-md-4">
-        <img ng-src="../images/mokeydugway.png" alt="Breathtaking Valley of the Gods">
-      </div>
-      <div class="col-md-4">
-        <img ng-src="../images/lakepowell.png" alt="Lake Powell">
+      <div ng-repeat="location in locations">
+        <div class="col-md-4">
+          <img class="teaser" ng-src="{{location.img}}">
+          <h4>{{location.name}}</h4>
+          <p>{{location.desc}}</p>
+          <button ui-sref="locations({id:location.id})">Find out More!</button>
+        </div>
       </div>
     </div>
   </section>

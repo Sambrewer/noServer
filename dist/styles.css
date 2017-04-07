@@ -16,14 +16,29 @@
 .introText h2 {
   font-size: 24px; }
 
+.mainContent {
+  height: 350px;
+  margin-bottom: 25px; }
+
 .mainContentText {
   margin-left: 40px; }
 
 .mainContent img {
   float: right;
-  height: 300px;
-  width: 200px;
+  height: 350px;
+  width: 300px;
   margin: 5px 40px; }
+
+.breaker {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px; }
+
+.teaser {
+  height: 300px;
+  width: 300px;
+  border-radius: 10px; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
