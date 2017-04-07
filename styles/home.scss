@@ -1,0 +1,28 @@
+@import 'variable';
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url(../images/ruin.png)no-repeat;
+  background-size: cover;
+  color: $headerColor;
+  height: 300px;
+  font-family: $headerFont;
+  margin-bottom: 40px;
+}
+.introText {
+  height: 150px;
+  width: 33%;
+}
+.introText h2{
+  font-size: 24px;
+}
+.mainContentText {
+  margin-left: 40px;
+}
+.mainContent img{
+  float: right;
+  height: 300px;
+  width: 200px;
+  margin: 5px 40px;
+}

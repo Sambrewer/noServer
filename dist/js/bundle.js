@@ -19,8 +19,13 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').directive('navBar', function () {
   return {
-    restrict: 'E',
-    templateUrl: '../views/directive-html/nabBar.html'
+    restrict: 'AE',
+    templateUrl: "../views/directive-html/navBar.html"
   };
+});
+'use strict';
+
+angular.module('app').controller('welcomeCtrl', function ($scope) {
+    $scope.bgimg = "../../images/archBack.jpg";
 });
 //# sourceMappingURL=bundle.js.map

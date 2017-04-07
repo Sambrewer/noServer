@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
-    <link rel="stylesheet" src="./styles/styles.d41d8cd9.css"
+    <link rel="stylesheet" href="./dist/styles.d41d8cd9.css">
     <meta charset="utf-8">
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Diplomata');
+    </style>
     <title>San Juan County</title>
   </head>
   <body>
-  <nav-dir><nav-dir>
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+  <div>
+    <ui-view></ui-view>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
   <script src="./dist/js/bundle.js"></script>
   </body>
 </html>
