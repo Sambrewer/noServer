@@ -1,0 +1,20 @@
+@import 'variable';
+.tabSection {
+  // height: 400px;
+  // background: black;
+.tabWrapper{
+  display: inline-block;
+  margin-left: 20px;
+  height: 450px;
+  padding: 15px;
+  .tabInfo {
+    width: 275px;
+    height: 275px;
+        img {
+          height: 300px;
+          width: 300px;
+          border-radius: 5px;
+        }
+      }
+  }
+}

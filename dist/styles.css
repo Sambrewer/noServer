@@ -1,10 +1,18 @@
+.header {
+  background: #ac1b03; }
+
+.home-wrapper {
+  background: url("../images/sandstonebg.jpg");
+  width: 100%;
+  overflow: hidden; }
+
 .intro {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background: url(../images/ruin.png) no-repeat;
   background-size: cover;
-  color: #ddd;
+  color: #ccc;
   height: 300px;
   font-family: "Diplomata", cursive;
   margin-bottom: 40px; }
@@ -17,11 +25,13 @@
   font-size: 24px; }
 
 .mainContent {
-  height: 350px;
-  margin-bottom: 25px; }
+  height: auto;
+  margin-bottom: 40px; }
 
 .mainContentText {
-  margin-left: 40px; }
+  margin-left: 40px;
+  color: black;
+  font-size: 24px; }
 
 .mainContent img {
   float: right;
@@ -31,14 +41,61 @@
 
 .breaker {
   height: 300px;
-  width: 100%;
   overflow: hidden;
-  margin-bottom: 20px; }
+  margin-bottom: 40px; }
+
+.teaserContainer {
+  margin-left: 40px; }
+
+.teaserContent {
+  text-align: center;
+  margin-bottom: 12px; }
 
 .teaser {
   height: 300px;
   width: 300px;
-  border-radius: 10px; }
+  border-radius: 10px;
+  opacity: 0.8; }
+
+.teaserText {
+  color: black; }
+
+.teaserHead {
+  font-size: 24px;
+  font-family: "Diplomata", cursive; }
+
+.teaserInfo {
+  color: black;
+  text-align: center;
+  font-size: 32px; }
+
+
+.planningHead {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url("../images/goosenecks.png") no-repeat;
+  background-size: cover;
+  height: 300px;
+  font-family: "Diplomata", cursive;
+  font-size: 32px;
+  color: #ccc;
+  margin-bottom: 40px; }
+  .planningHead h2 {
+    width: 40%; }
+
+.planningTabWrapper {
+  background: tan;
+  height: 50px;
+  align-text: center; }
+  .planningTabWrapper .planningTab {
+    height: 50px;
+    background: tan;
+    border-right: 2px solid brown;
+    margin-left: 50px; }
+  .planningTabWrapper .planningView {
+    height: auto;
+    background: black; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -83,6 +140,18 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.tabSection .tabWrapper {
+  display: inline-block;
+  margin-left: 20px;
+  height: 450px;
+  padding: 15px; }
+  .tabSection .tabWrapper .tabInfo {
+    width: 275px;
+    height: 275px; }
+    .tabSection .tabWrapper .tabInfo img {
+      height: 300px;
+      width: 300px;
+      border-radius: 5px; }
 
 
 .welcomeBody {
@@ -97,7 +166,7 @@ table {
   font-family: "Diplomata", cursive; }
 
 .greeting {
-  color: #ddd;
+  color: #ccc;
   font-size: 5em;
   text-align: center;
   margin-bottom: 225px; }

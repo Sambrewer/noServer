@@ -1,7 +1,7 @@
-<header>
-    <nav-bar><nav-bar>
+<header class="header">
+  <nav-bar><nav-bar>
 </header>
-<div class="main-wrapper">
+<div class="home-wrapper">
   <div class="intro">
     <div class="introText">
       <h2>THE CORNERSTONE TO YOUR NEXT ADVENTURE</h2>
@@ -22,16 +22,17 @@
   <div class="breaker">
     <img src="../images/newspaper-rock.jpg" alt="Newspaper Rock">
   </div>
-  <section class="teaserSection" ng-controller="teaserCtrl">
+  <section ng-controller="teaserCtrl">
     <div class="row">
-      <div ng-repeat="location in locations">
-        <div class="col-md-4">
-          <img class="teaser" ng-src="{{location.img}}">
-          <h4>{{location.name}}</h4>
-          <p>{{location.desc}}</p>
-          <button ui-sref="locations({id:location.id})">Find out More!</button>
+      <div ng-repeat="location in locations" class="teaserContainer">
+        <div class="col-md-4 teaserContent">
+            <img  class="teaser" ui-sref="locations({id:location.id})" ng-src="{{location.img}}">
+          <h4 class="teaserText teaserHead">{{location.name}}</h4>
+          <p class="teaserText">{{location.desc}}</p>
         </div>
       </div>
+      <h1 class="teaserInfo">Click on an Image to learn more!</h1>
     </div>
   </section>
+  <footer-dir></footer-dir>
 </div>

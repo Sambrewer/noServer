@@ -1,14 +1,11 @@
-<div class="title">
-  <h1>Get the Most Out of Your Adventure With One of Our Tours!</h1>
-</div>
-<section>
-  <div ng-repeat="tour in tours">
+<section class="tabSection">
+  <div ng-repeat="tour in tours" class="tabWrapper">
     <div class="tabInfo">
-      <img src="#" alt="a picture of a hotel">
+      <img src="{{tour.img}}" alt="a picture of a something">
       <p>{{tour.name}}</p>
       <p>{{tour.desc}}</p>
       <p>${{tour.price}}</p>
-      <p>{{tour.strain}}</p>
+      <p>Stran: {{tour.strain}}</p>
     </div>
   </div>
 </section>

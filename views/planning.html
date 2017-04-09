@@ -6,22 +6,24 @@
     <h2>Start Planning Your Adventure Today!</h2>
   </div>
 </section>
-<div>
-  <div class="row">
-    <div class="col-md-2 planningTab" ui-sref="lodging">
-      <h2>Lodging</h2>
+<section>
+  <div class="planningTabWrapper">
+    <div class="row">
+      <div class="col-md-2 planningTab" ui-sref="lodging">
+        <h2>Lodging</h2>
+      </div>
+      <div class="col-md-2 planningTab" ui-sref="tours">
+        <h2>Tours</h2>
+      </div>
+      <div class="col-md-2 planningTab" ui-sref="camping">
+        <h2>National Parks & Monuments</h2>
+      </div>
+      <div class="col-md-2 planningTab" ui-sref="rentals">
+        <h2>Rentals</h2>
+      </div>
     </div>
-    <div class="col-md-2 planningTab" ui-sref="tours">
-      <h2>Tours</h2>
-    </div>
-    <div class="col-md-2 planningTab" ui-sref="camping">
-      <h2>Camping</h2>
-    </div>
-    <div class="col-md-2 planningTab" ui-sref="rentals">
-      <h2>Rentals</h2>
+    <div class="planningView">
+      <ui-view></ui-view>
     </div>
   </div>
-  <div class="planningView">
-    <ui-view></ui-view>
-  </div>
-</div>
+</section>

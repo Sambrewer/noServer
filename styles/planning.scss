@@ -1,0 +1,32 @@
+@import 'variable';
+.planningHead {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url('../images/goosenecks.png')no-repeat;
+  background-size: cover;
+  height: $headerHeight;
+  font-family: $headerFont;
+  font-size: 32px;
+  color: $headerColor;
+  margin-bottom: $pageBreak;
+  h2 {
+    width: 40%;
+  }
+}
+.planningTabWrapper{
+  background: tan;
+  height: 50px;
+  align-text: center;
+  .planningTab {
+    height: 50px;
+    background: tan;
+    border-right: 2px solid brown;
+    margin-left: 50px;
+  }
+
+  .planningView {
+    height: auto;
+    background: black;
+  }
+}

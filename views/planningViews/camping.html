@@ -1,1 +1,8 @@
-<h1>camping</h1>
+<section class="tabSection">
+  <div ng-repeat="park in parks" class="tabWrapper">
+    <div class="tabInfo">
+      <img src="{{park.img}}" alt="picture of the park/Monument">
+      <p>{{park.name}}</p>
+    </div>
+  </div>
+</section>

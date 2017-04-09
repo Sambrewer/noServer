@@ -1,14 +1,10 @@
-<div class="title">
-  <h1>Where would you like to stay?</h1>
-</div>
-<section>
-  <div ng-repeat="place in lodging">
+<section class="tabSection">
+  <div ng-repeat="place in lodging" class="tabWrapper">
     <div class="tabInfo">
-      <img src="#" alt="a picture of a hotel">
-      <p>{{place.name}}</p>
-      <p>{{place.address}}</p>
-      <p>${{place.price}} a night</p>
-      <p>{{place.rating}}</p>
+        <img src="{{place.img}}" alt="a picture of a hotel">
+        <p>{{place.name}}</p>
+        <p>{{place.address}}</p>
+        <p><span>--${{place.price}} a night--</span> <span>--{{place.rating}}--</span></p>
     </div>
   </div>
 </section>
