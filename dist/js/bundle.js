@@ -25,8 +25,9 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     controller: 'parksCtrl'
   }).state('planner', {
     parent: 'planning',
-    url: '/planner',
-    templateUrl: '../views/planningViews/planner.html'
+    url: '/planner/:name',
+    templateUrl: '../views/planningViews/planner.html',
+    controller: "lodgingCtrl"
   }).state('weather', {
     url: '/weather',
     templateUrl: '../views/weather.html',
@@ -40,21 +41,11 @@ angular.module('app').directive('plannerDir', function () {
   return {
     templateUrl: '../views/directive-html/plannerDir.html',
     restrict: 'AE',
-    controller: function controller($scope, tabsSvc) {
-      $scope.getPlaces = tabsSvc.getLodging();
-    },
     scope: {
       eventp: '=',
-      addEvent: '&'
+      addStuff: '&'
     },
-    link: function link(scope, element, attributes) {
-      // var list = document.getElementById('#eventList')
-      element.on('click', function () {
-        var newEvent = element.parent().clone();
-        $('.eventList').append(newEvent);
-        console.log($('.eventList'));
-      });
-    }
+    link: function link(scope, element, attributes) {}
   };
 });
 'use strict';
@@ -81,10 +72,27 @@ angular.module('app').controller('teaserCtrl', function ($scope, locationSvc) {
 });
 'use strict';
 
-angular.module('app').controller('lodgingCtrl', function ($scope, tabsSvc) {
+angular.module('app').controller('lodgingCtrl', function ($scope, tabsSvc, $stateParams) {
+  $scope.listedEvents = tabsSvc.getListedEvents();
   $scope.lodging = tabsSvc.getLodging();
-  $scope.test = "hello";
-  console.log($scope.lodging);
+  $scope.activities = tabsSvc.getTours();
+  $scope.parks = tabsSvc.getParks();
+  // $scope.listedEvents.push($scope.lodging)
+  // $scope.listedEvents.push($scope.activities)
+  // $scope.conditions = $stateParams;
+  console.log($stateParams.name + " HELLO");
+  $scope.list = [];
+  // $scope.addStuff = function() {
+  for (var i = 0; i < $scope.listedEvents.length; i++) {
+    if ($scope.listedEvents[i].name === $stateParams.name) {
+      $scope.list.push($scope.listedEvents[i]);
+      return $scope.list;
+    }
+  }
+  // console.log($stateParams.name);
+  // console.log($scope.list)
+  // console.log($scope.listedEvents);
+  // }()
 });
 'use strict';
 
@@ -288,6 +296,7 @@ angular.module('app').service('locationSvc', function () {
 'use strict';
 
 angular.module('app').service('tabsSvc', function () {
+  var allEvents = [];
   var lodging = [{
     name: 'Super 8 Blanding',
     img: '../../images/lodging/s8b.jpg',
@@ -295,7 +304,7 @@ angular.module('app').service('tabsSvc', function () {
     price: '86',
     rating: '3.7 stars'
   }, {
-    name: 'Rodeway Inn',
+    name: 'Rodeway Inn(M)',
     img: '../../images/lodging/rwm.png',
     address: '649 N Main St, Monticello, UT',
     price: '100',
@@ -319,7 +328,7 @@ angular.module('app').service('tabsSvc', function () {
     price: '104',
     rating: '4.6 stars'
   }, {
-    name: 'Rodeway Inn',
+    name: 'Rodeway Inn(B)',
     img: '../../images/lodging/rwb.png',
     address: '711 S Main St, Blanding, UT',
     price: '100',
@@ -416,6 +425,18 @@ angular.module('app').service('tabsSvc', function () {
   };
   this.getParks = function () {
     return monuments;
+  };
+  this.getListedEvents = function () {
+    for (var i = 0; i < lodging.length; i++) {
+      allEvents.push(lodging[i]);
+    }
+    for (var j = 0; i < tours.length; i++) {
+      allEvents.push(tours[j]);
+    }
+    for (var k = 0; i < monuments.length; k++) {
+      allEvents.push(monuments[k]);
+    }
+    return allEvents;
   };
 });
 'use strict';

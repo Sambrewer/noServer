@@ -31,8 +31,9 @@ angular.module('app', ['ui.router'])
       })
       .state('planner', {
         parent: 'planning',
-        url: '/planner',
-        templateUrl: '../views/planningViews/planner.html'
+        url: '/planner/:name',
+        templateUrl: '../views/planningViews/planner.html',
+        controller: "lodgingCtrl"
       })
       .state('weather', {
         url: '/weather',

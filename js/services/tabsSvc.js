@@ -1,4 +1,5 @@
 angular.module('app').service('tabsSvc', function() {
+  var allEvents = [];
   var lodging = [
     {
       name: 'Super 8 Blanding',
@@ -8,7 +9,7 @@ angular.module('app').service('tabsSvc', function() {
       rating: '3.7 stars'
     },
     {
-      name: 'Rodeway Inn',
+      name: 'Rodeway Inn(M)',
       img: '../../images/lodging/rwm.png',
       address: '649 N Main St, Monticello, UT',
       price: '100',
@@ -36,7 +37,7 @@ angular.module('app').service('tabsSvc', function() {
       rating: '4.6 stars'
     },
     {
-      name: 'Rodeway Inn',
+      name: 'Rodeway Inn(B)',
       img: '../../images/lodging/rwb.png',
       address: '711 S Main St, Blanding, UT',
       price: '100',
@@ -154,5 +155,17 @@ angular.module('app').service('tabsSvc', function() {
   }
   this.getParks = function() {
     return monuments
+  }
+  this.getListedEvents = function() {
+    for (var i = 0; i < lodging.length; i++) {
+      allEvents.push(lodging[i]);
+    }
+    for (var j = 0; i < tours.length; i++) {
+      allEvents.push(tours[j]);
+    }
+    for (var k = 0; i < monuments.length; k++) {
+      allEvents.push(monuments[k])
+    }
+    return allEvents;
   }
 })
