@@ -1,4 +1,5 @@
 @import 'variable';
+
 .planningHead {
   display: flex;
   align-items: center;
@@ -9,7 +10,7 @@
   font-family: $headerFont;
   font-size: 32px;
   color: $headerColor;
-  margin-bottom: $pageBreak;
+
   h2 {
     width: 40%;
   }
@@ -19,14 +20,22 @@
   height: 50px;
   align-text: center;
   .planningTab {
+    display: flex;
+    align-items: center;
     height: 50px;
     background: tan;
     border-right: 2px solid brown;
     margin-left: 50px;
+    h2 {
+      font-size: 24px;
+    }
   }
 
   .planningView {
-    height: auto;
-    background: black;
+    height: 550px;
+    background: url('../images/DeepSpace.jpg')no-repeat;
+    background-size: cover;
+    overflow: scroll;
+    overflow-x: hidden;
   }
 }

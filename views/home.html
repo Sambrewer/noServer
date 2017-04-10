@@ -1,6 +1,3 @@
-<header class="header">
-  <nav-bar><nav-bar>
-</header>
 <div class="home-wrapper">
   <div class="intro">
     <div class="introText">
@@ -8,8 +5,11 @@
     </div>
   </div>
   <section>
+    <div>
+      <nav-bar></nav-bar>
+    </div>
     <div class="mainContent">
-      <img ng-src="../images/firehouse.png" alt="Firehouse Ruin">
+       <img ng-src="../images/firehouse.png" alt="Firehouse Ruin">
       <div class="mainContentText">
         <p>Lucas ipsum dolor sit amet xanatos dantari vestara annoo selkath triclops vor borsk panaka ors. Solo draethos fel sebulba nute jinn wessell melodie. Ventress r4-p17 falleen raioballo sarn fosh hallotan sidious. Sulorine baba hoth tatooine hutt halla. Darklighter daala ventress tatooine senesca yuzzem. Nar coruscant iego hutta nal haruun jabiimas mon hutt. Orus lars sarn muunilinst. Hssis naberrie nar sy padmé anakin givin shmi. Reach lahara carondian thennqora aayla. Hoojib xizor olié vader piett utapau yuvernian.</p>
         <br>
@@ -19,20 +19,6 @@
       </div>
     </div>
   </section>
-  <div class="breaker">
-    <img src="../images/newspaper-rock.jpg" alt="Newspaper Rock">
-  </div>
-  <section ng-controller="teaserCtrl">
-    <div class="row">
-      <div ng-repeat="location in locations" class="teaserContainer">
-        <div class="col-md-4 teaserContent">
-            <img  class="teaser" ui-sref="locations({id:location.id})" ng-src="{{location.img}}">
-          <h4 class="teaserText teaserHead">{{location.name}}</h4>
-          <p class="teaserText">{{location.desc}}</p>
-        </div>
-      </div>
-      <h1 class="teaserInfo">Click on an Image to learn more!</h1>
-    </div>
-  </section>
+
   <footer-dir></footer-dir>
 </div>

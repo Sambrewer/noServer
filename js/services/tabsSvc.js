@@ -8,7 +8,7 @@ angular.module('app').service('tabsSvc', function() {
       rating: '3.7 stars'
     },
     {
-      name: 'Rodeway Inns & Suites(Monticello)',
+      name: 'Rodeway Inn',
       img: '../../images/lodging/rwm.png',
       address: '649 N Main St, Monticello, UT',
       price: '100',
@@ -29,14 +29,14 @@ angular.module('app').service('tabsSvc', function() {
       rating: '3.7 stars'
     },
     {
-      name: 'Stone Lizard Lodging',
+      name: 'Stone Lizard',
       img: '../../images/lodging/sll.png',
       address: '88 W Center St, Blanding, UT',
       price: '104',
       rating: '4.6 stars'
     },
     {
-      name: 'Rodeway Inns & Suites(Blanding)',
+      name: 'Rodeway Inn',
       img: '../../images/lodging/rwb.png',
       address: '711 S Main St, Blanding, UT',
       price: '100',
@@ -57,7 +57,7 @@ angular.module('app').service('tabsSvc', function() {
       rating: '4.5 stars'
     },
     {
-      name: 'Defiance House Lodging',
+      name: 'Defiance House',
       img: '../../images/lodging/dhl.png',
       address: 'Glen Canyon, Hwy 276, Bullfrog, UT',
       price: '125',
@@ -73,9 +73,9 @@ angular.module('app').service('tabsSvc', function() {
   ]
   var tours = [
     {
-      name: 'San Juan River',
+      name: 'San Juan',
       img: '../../images/tours/sjt.png',
-      desc: 'Float down the mighty San Juan River in a raft, or inflatable kayak',
+      desc: 'Float down the mighty San Juan River in a raft, or kayak',
       price: '800',
       strain: '2'
     },

@@ -1,10 +1,11 @@
 <section class="tabSection">
   <div ng-repeat="place in lodging" class="tabWrapper">
-    <div class="tabInfo">
-        <img src="{{place.img}}" alt="a picture of a hotel">
-        <p>{{place.name}}</p>
+    <div  tabs-dir class="tabInfo">
+        <img img-dir src="{{place.img}}" alt="a picture of a hotel">
+        <h1>{{place.name}}</h1>
         <p>{{place.address}}</p>
         <p><span>--${{place.price}} a night--</span> <span>--{{place.rating}}--</span></p>
     </div>
+    <button  planner-dir="addEvent">Add This to Your Day!</button>
   </div>
 </section>

@@ -3,7 +3,7 @@
   background: rgb(172, 27, 3);
 }
 .home-wrapper {
-  background: url('../images/sandstonebg.jpg');
+  background: url('../images/EmeraldWater.jpg');
   width: 100%;
   overflow: hidden;
 }
@@ -11,34 +11,35 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: url(../images/ruin.png)no-repeat;
+  background: url(../images/ruin.png);
   background-size: cover;
   color: $headerColor;
   height: $headerHeight;
   font-family: $headerFont;
-  margin-bottom: $pageBreak;
 }
 .introText {
   height: 150px;
   width: 33%;
-}
-.introText h2{
-  font-size: 24px;
+  h2{
+    font-size: 24px;
+  }
 }
 .mainContent {
-  height: auto;
+  display: flex;
+  align-items: center;
+  height: 500px;
   margin-bottom: $pageBreak;
-}
-.mainContentText {
-  margin-left: $pageBreak;
-  color: black;
-  font-size: 24px;
+  .mainContentText {
+    margin-left: $pageBreak;
+    color: black;
+    font-size: 24px;
+    }
 }
 .mainContent img{
-  float: right;
   height: 350px;
-  width: 300px;
+  width: 350px;
   margin: 5px 40px;
+  border: $imageBorder;
 }
 .breaker {
   height: 300px;
@@ -47,23 +48,24 @@
 }
 .teaserContainer {
   margin-left: $pageBreak;
-}
-.teaserContent {
-  text-align: center;
-  margin-bottom: 12px;
-}
-.teaser {
-  height: 300px;
-  width: 300px;
-  border-radius: 10px;
-  opacity: 0.8;
-}
-.teaserText {
-  color: black;
-}
-.teaserHead {
-  font-size: 24px;
-  font-family: $headerFont;
+  .teaserContent {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+    .teaser {
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      opacity: 0.8;
+    }
+    .teaserHead {
+      font-size: 24px;
+      font-family: $headerFont;
+    }
+    .teaserText {
+      color: black;
+    }
+  }
 }
 .teaserInfo {
   color: black;

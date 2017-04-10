@@ -1,29 +1,46 @@
-<header>
-  <nav-bar></nav-bar>
-</header>
-<section>
-  <div class="planningHead">
-    <h2>Start Planning Your Adventure Today!</h2>
+
+<section class="planningBody">
+  <section>
+    <div class="planningHead">
+      <h2>Start Planning Your Adventure Today!</h2>
+    </div>
+  </section>
+  <div>
+    <nav-bar></nav-bar>
   </div>
-</section>
-<section>
-  <div class="planningTabWrapper">
-    <div class="row">
-      <div class="col-md-2 planningTab" ui-sref="lodging">
-        <h2>Lodging</h2>
+  <section>
+    <div class="planningTabWrapper">
+      <div class="row">
+        <div class="col-md-2 planningTab" ui-sref="lodging">
+          <h2>Lodging</h2>
+        </div>
+        <div class="col-md-2 planningTab" ui-sref="tours">
+          <h2>Activities</h2>
+        </div>
+        <div class="col-md-2 planningTab" ui-sref="camping">
+          <h2>National Parks & Monuments</h2>
+        </div>
+        <div class="col-md-2 planningTab" ui-sref="planner">
+          <h2>Weekly Planner</h2>
+        </div>
       </div>
-      <div class="col-md-2 planningTab" ui-sref="tours">
-        <h2>Tours</h2>
-      </div>
-      <div class="col-md-2 planningTab" ui-sref="camping">
-        <h2>National Parks & Monuments</h2>
-      </div>
-      <div class="col-md-2 planningTab" ui-sref="rentals">
-        <h2>Rentals</h2>
+      <div class="planningView">
+        <ui-view>
+          <section ng-controller="teaserCtrl">
+            <div class="row">
+              <div ng-repeat="location in locations" class="teaserContainer">
+                <div class="col-md-4 teaserContent">
+                    <img img-dir class="teaser" ui-sref="locations({id:location.id})" ng-src="{{location.img}}">
+                  <h4 class="teaserText teaserHead">{{location.name}}</h4>
+                  <p class="teaserText">{{location.desc}}</p>
+                </div>
+              </div>
+              <h1 class="teaserInfo">Click on an Image to learn more!</h1>
+            </div>
+          </section>
+        </ui-view>
+        <footer-dir></footer-dir>
       </div>
     </div>
-    <div class="planningView">
-      <ui-view></ui-view>
-    </div>
-  </div>
+  </section>
 </section>

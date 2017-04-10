@@ -2,12 +2,8 @@ angular.module('app', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
 
   $stateProvider
-      .state('welcome', {
-        url: '/',
-        templateUrl: '../views/welcome.html'
-      })
       .state('home', {
-        url: '/home',
+        url: '/',
         templateUrl: '../views/home.html'
       })
       .state('locations', {
@@ -37,12 +33,16 @@ angular.module('app', ['ui.router'])
         templateUrl: '../views/planningViews/camping.html',
         controller: 'parksCtrl'
       })
-      .state('rentals', {
+      .state('planner', {
         parent: 'planning',
-        url: '/rentals',
-        templateUrl: '../views/planningViews/rentals.html'
+        url: '/planner',
+        templateUrl: '../views/planningViews/planner.html'
       })
-
+      .state('weather', {
+        url: '/weather',
+        templateUrl: '../views/weather.html',
+        controller: 'weatherCtrl'
+      });
   $urlRouterProvider
     .otherwise('/')
 

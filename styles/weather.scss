@@ -1,0 +1,37 @@
+@import "variable";
+.weatherWrapper {
+  background: url('../images/wbg.jpg')no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  div {
+    height: auto;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 5px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+      margin: $pageBreak;
+      background: white;
+      border-radius: 25px;
+      height: auto;
+      width: 50%;
+      display: block;
+      padding: $pageBreak;
+      h1 {
+        font-size: 48px;
+        margin-bottom: $pageBreak;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+}

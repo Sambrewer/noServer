@@ -1,0 +1,15 @@
+<section ng-controller="teaserCtrl">
+  <div class="row">
+    <div class="breaker">
+      <img src="../images/newspaper-rock.jpg" alt="Newspaper Rock">
+    </div>
+    <div ng-repeat="location in locations" class="teaserContainer">
+      <div class="col-md-4 teaserContent">
+          <img img-dir class="teaser" ui-sref="locations({id:location.id})" ng-src="{{location.img}}">
+        <h4 class="teaserText teaserHead">{{location.name}}</h4>
+        <p class="teaserText">{{location.desc}}</p>
+      </div>
+    </div>
+    <h1 class="teaserInfo">Click on an Image to learn more!</h1>
+  </div>
+</section>

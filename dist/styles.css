@@ -1,8 +1,15 @@
+.footerDir {
+  background: brown;
+  color: #ccc;
+  font-size: 24px;
+  font-family: "Diplomata", cursive;
+  border-top: 3px solid #ddd; }
+
 .header {
   background: #ac1b03; }
 
 .home-wrapper {
-  background: url("../images/sandstonebg.jpg");
+  background: url("../images/EmeraldWater.jpg");
   width: 100%;
   overflow: hidden; }
 
@@ -10,34 +17,33 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: url(../images/ruin.png) no-repeat;
+  background: url(../images/ruin.png);
   background-size: cover;
   color: #ccc;
   height: 300px;
-  font-family: "Diplomata", cursive;
-  margin-bottom: 40px; }
+  font-family: "Diplomata", cursive; }
 
 .introText {
   height: 150px;
   width: 33%; }
-
-.introText h2 {
-  font-size: 24px; }
+  .introText h2 {
+    font-size: 24px; }
 
 .mainContent {
-  height: auto;
+  display: flex;
+  align-items: center;
+  height: 500px;
   margin-bottom: 40px; }
-
-.mainContentText {
-  margin-left: 40px;
-  color: black;
-  font-size: 24px; }
+  .mainContent .mainContentText {
+    margin-left: 40px;
+    color: black;
+    font-size: 24px; }
 
 .mainContent img {
-  float: right;
   height: 350px;
-  width: 300px;
-  margin: 5px 40px; }
+  width: 350px;
+  margin: 5px 40px;
+  border: 3px solid #ddd; }
 
 .breaker {
   height: 300px;
@@ -46,29 +52,54 @@
 
 .teaserContainer {
   margin-left: 40px; }
-
-.teaserContent {
-  text-align: center;
-  margin-bottom: 12px; }
-
-.teaser {
-  height: 300px;
-  width: 300px;
-  border-radius: 10px;
-  opacity: 0.8; }
-
-.teaserText {
-  color: black; }
-
-.teaserHead {
-  font-size: 24px;
-  font-family: "Diplomata", cursive; }
+  .teaserContainer .teaserContent {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 12px; }
+    .teaserContainer .teaserContent .teaser {
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      opacity: 0.8; }
+    .teaserContainer .teaserContent .teaserHead {
+      font-size: 24px;
+      font-family: "Diplomata", cursive; }
+    .teaserContainer .teaserContent .teaserText {
+      color: black; }
 
 .teaserInfo {
   color: black;
   text-align: center;
   font-size: 32px; }
 
+body {
+  overflow-x: hidden; }
+
+.navBarDir {
+  height: 40px;
+  background: #B18A80;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Diplomata", cursive; }
+
+.navBarLink {
+  color: white;
+  text-decoration: none; }
+
+.weekPlanWrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+  .weekPlanWrap div {
+    margin-top: 40px;
+    height: 500px;
+    width: 100vw; }
+    .weekPlanWrap div .day {
+      height: 300px;
+      width: 75%;
+      background: white; }
 
 .planningHead {
   display: flex;
@@ -79,8 +110,7 @@
   height: 300px;
   font-family: "Diplomata", cursive;
   font-size: 32px;
-  color: #ccc;
-  margin-bottom: 40px; }
+  color: #ccc; }
   .planningHead h2 {
     width: 40%; }
 
@@ -89,13 +119,20 @@
   height: 50px;
   align-text: center; }
   .planningTabWrapper .planningTab {
+    display: flex;
+    align-items: center;
     height: 50px;
     background: tan;
     border-right: 2px solid brown;
     margin-left: 50px; }
+    .planningTabWrapper .planningTab h2 {
+      font-size: 24px; }
   .planningTabWrapper .planningView {
-    height: auto;
-    background: black; }
+    height: 550px;
+    background: url("../images/DeepSpace.jpg") no-repeat;
+    background-size: cover;
+    overflow: scroll;
+    overflow-x: hidden; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -143,39 +180,53 @@ table {
 .tabSection .tabWrapper {
   display: inline-block;
   margin-left: 20px;
-  height: 450px;
+  height: 480px;
   padding: 15px; }
   .tabSection .tabWrapper .tabInfo {
     width: 275px;
-    height: 275px; }
+    height: 275px;
+    color: #444; }
     .tabSection .tabWrapper .tabInfo img {
       height: 300px;
       width: 300px;
-      border-radius: 5px; }
+      border: 3px solid #ddd;
+      border-radius: 5px;
+      opacity: 0.8; }
+    .tabSection .tabWrapper .tabInfo h1 {
+      font-family: "Diplomata", cursive;
+      font-size: 24px; }
 
 
-.welcomeBody {
-  background: url(../images/archBack.jpg) no-repeat;
+.weatherWrapper {
+  background: url("../images/wbg.jpg") no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  font-family: "Diplomata", cursive; }
-
-.greeting {
-  color: #ccc;
-  font-size: 5em;
-  text-align: center;
-  margin-bottom: 225px; }
-
-.enter {
-  width: 225px;
-  font-size: 16px;
-  font-family: inherit;
-  border: none;
-  border-radius: 10px; }
+  align-items: center;
+  overflow: hidden; }
+  .weatherWrapper div {
+    height: auto;
+    width: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 5px solid black;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .weatherWrapper div div {
+      margin: 40px;
+      background: white;
+      border-radius: 25px;
+      height: auto;
+      width: 50%;
+      display: block;
+      padding: 40px; }
+      .weatherWrapper div div h1 {
+        font-size: 48px;
+        margin-bottom: 40px; }
+      .weatherWrapper div div p {
+        font-size: 24px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

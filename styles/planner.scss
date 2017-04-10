@@ -1,0 +1,16 @@
+@import "variable";
+.weekPlanWrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    margin-top: $pageBreak;
+    height: 500px;;
+    width: 100vw;
+    .day {
+      height: 300px;
+      width: 75%;
+      background: white;
+    }
+  }
+}

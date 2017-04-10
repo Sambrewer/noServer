@@ -2,11 +2,8 @@
 
 angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
-  $stateProvider.state('welcome', {
+  $stateProvider.state('home', {
     url: '/',
-    templateUrl: '../views/welcome.html'
-  }).state('home', {
-    url: '/home',
     templateUrl: '../views/home.html'
   }).state('locations', {
     url: '/locations/:id',
@@ -30,13 +27,31 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
     url: '/camping',
     templateUrl: '../views/planningViews/camping.html',
     controller: 'parksCtrl'
-  }).state('rentals', {
+  }).state('planner', {
     parent: 'planning',
-    url: '/rentals',
-    templateUrl: '../views/planningViews/rentals.html'
+    url: '/planner',
+    templateUrl: '../views/planningViews/planner.html'
+  }).state('weather', {
+    url: '/weather',
+    templateUrl: '../views/weather.html',
+    controller: 'weatherCtrl'
   });
-
   $urlRouterProvider.otherwise('/');
+});
+'use strict';
+
+angular.module('app').directive('plannerDir', function () {
+  return {
+    restrict: 'A',
+    scope: {
+      addEvent: '&'
+    },
+    link: function link(scope, element, attributes) {
+      element.on('click', function () {
+        $(this).innerHtml('.day');
+      });
+    }
+  };
 });
 'use strict';
 
@@ -72,6 +87,31 @@ angular.module('app').controller('lodgingCtrl', function ($scope, tabsSvc) {
 angular.module('app').controller('toursCtrl', function ($scope, tabsSvc) {
   $scope.tours = tabsSvc.getTours();
   console.log($scope.tours);
+});
+'use strict';
+
+angular.module('app').controller('weatherCtrl', function ($scope, weatherSvc) {
+  $scope.c = false;
+  var weather = {};
+  $scope.getWeather = function () {
+    weatherSvc.getWeather().then(function (response) {
+      $scope.currentWeather = response.weather[0];
+      $scope.weatherInfo = response.main;
+      console.log(response);
+    });
+  };
+  $scope.changeBackground = function (response) {
+    $scope.id = response.weather[0].id;
+    $scope.backgroundId = [299, 499, 599, 699, 799, 800];
+
+    $scope.wthrBG = ['https://aos.iacpublishinglabs.com/question/aq/1400px-788px/thunderstorms-made_fdef5d2957edbe09.jpg?domain=cx.aos.ask.com', 'http://www.metoffice.gov.uk/media/image/d/n/light_rain.jpg', 'http://www.artifacting.com/blog/wp-content/uploads/2012/10/Rain-Room.jpg', 'https://www.walldevil.com/wallpapers/a90/fir-tree-forest-snow-winter.jpg', 'https://iamchronicallywell.files.wordpress.com/2014/07/wm-rgp_1641_8739.jpg', 'http://news.bbcimg.co.uk/media/images/65976000/jpg/_65976125_kenearles.jpg', 'http://img10.deviantart.net/b4fc/i/2011/017/c/5/cloudy_sky_stock_by_arwenarts-d25qi7j.jpg'];
+
+    $scope.backgroundId.push($scope.id);
+    $scope.bgIndex = $scope.backgroundId.sort().indexOf($scope.id);
+    console.log('hi');
+  };
+  $scope.getWeather();
+  console.log($scope.currentWeather);
 });
 'use strict';
 
@@ -113,10 +153,31 @@ angular.module('app').directive('navBar', function () {
 
 angular.module('app').directive('tabsDir', function () {
   return {
-    restrict: 'A'
-
+    restrict: 'A',
+    link: function link(scope, element, attributes) {
+      element.on('mouseover', function () {
+        element.css('color', 'white');
+      });
+      element.on('mouseleave', function () {
+        element.css('color', '#444');
+      });
+    }
   };
 });
+"use strict";
+// angular.module('app').directive('wthrBg', function() {
+//   return {
+//     restrict: 'A',
+//     scope: {
+//
+//     }
+//     controller: 'weatherCtrl',
+//     link: function(scope, element, attributes) {
+//           $(element).css('background-image', 'url(' + scope.backgroundImg[scope.bgIndex] + ')')
+//     }
+//   };
+// })
+"use strict";
 'use strict';
 
 angular.module('app').service('locationSvc', function () {
@@ -156,37 +217,37 @@ angular.module('app').service('locationSvc', function () {
     id: 1,
     name: 'San Juan River',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/sanjuan.png'
   }, {
     id: 2,
     name: 'Monument Valley',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/monumentvalley.jpg'
   }, {
     id: 3,
     name: 'Bears Ears National Monument',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/bearsears.png'
   }, {
     id: 4,
     name: 'Lake Powell',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/lakepowell.png'
   }, {
     id: 5,
     name: 'Valley of the Gods',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/mokeydugway.png'
   }, {
     id: 6,
     name: 'Ancient Pueblo Ruins',
     head: 'A descriptive header',
-    desc: 'A paragraph about this location A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location. A paragraph about this location.',
+    desc: 'A paragraph about this location.',
     img: '../images/lakepowell.png'
   }];
   this.getLocation = function () {
@@ -206,7 +267,7 @@ angular.module('app').service('tabsSvc', function () {
     price: '86',
     rating: '3.7 stars'
   }, {
-    name: 'Rodeway Inns & Suites(Monticello)',
+    name: 'Rodeway Inn',
     img: '../../images/lodging/rwm.png',
     address: '649 N Main St, Monticello, UT',
     price: '100',
@@ -224,13 +285,13 @@ angular.module('app').service('tabsSvc', function () {
     price: '114',
     rating: '3.7 stars'
   }, {
-    name: 'Stone Lizard Lodging',
+    name: 'Stone Lizard',
     img: '../../images/lodging/sll.png',
     address: '88 W Center St, Blanding, UT',
     price: '104',
     rating: '4.6 stars'
   }, {
-    name: 'Rodeway Inns & Suites(Blanding)',
+    name: 'Rodeway Inn',
     img: '../../images/lodging/rwb.png',
     address: '711 S Main St, Blanding, UT',
     price: '100',
@@ -248,7 +309,7 @@ angular.module('app').service('tabsSvc', function () {
     price: '150',
     rating: '4.5 stars'
   }, {
-    name: 'Defiance House Lodging',
+    name: 'Defiance House',
     img: '../../images/lodging/dhl.png',
     address: 'Glen Canyon, Hwy 276, Bullfrog, UT',
     price: '125',
@@ -261,9 +322,9 @@ angular.module('app').service('tabsSvc', function () {
     rating: '3.9'
   }];
   var tours = [{
-    name: 'San Juan River',
+    name: 'San Juan',
     img: '../../images/tours/sjt.png',
-    desc: 'Float down the mighty San Juan River in a raft, or inflatable kayak',
+    desc: 'Float down the mighty San Juan River in a raft, or kayak',
     price: '800',
     strain: '2'
   }, {
@@ -327,6 +388,17 @@ angular.module('app').service('tabsSvc', function () {
   };
   this.getParks = function () {
     return monuments;
+  };
+});
+'use strict';
+
+angular.module('app').service('weatherSvc', function ($http) {
+  //api key 9aae8058c577305827971b6d7fac0ffc
+  this.getWeather = function () {
+    return $http.get('http://api.openweathermap.org/data/2.5/weather?zip=84511&units=imperial&appid=9aae8058c577305827971b6d7fac0ffc').then(function (response) {
+      console.log(response.data);
+      return response.data;
+    });
   };
 });
 //# sourceMappingURL=bundle.js.map
