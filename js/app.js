@@ -2,14 +2,10 @@ angular.module('app', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
 
   $stateProvider
-      .state('home', {
+
+      .state('welcome', {
         url: '/',
-        templateUrl: '../views/home.html'
-      })
-      .state('locations', {
-        url: '/locations/:id',
-        templateUrl: '../views/locations.html',
-        controller: 'infoCtrl'
+        templateUrl: '../views/welcome.html'
       })
       .state('planning', {
         url: '/planning',

@@ -1,11 +1,11 @@
 <section class="tabSection">
   <div ng-repeat="tour in tours" class="tabWrapper">
-    <div tabs-dir class="tabInfo">
-      <img img-dir src="{{tour.img}}" alt="a picture of a something">
+    <div img-dir class="tabInfo">
+      <img src="{{tour.img}}" alt="a picture of a something">
       <h1>{{tour.name}}</h1>
       <p>{{tour.desc}}</p>
       <p>${{tour.price}}</p>
-      <p>Stran: {{tour.strain}}</p>
+      <p>Strain: {{tour.strain}}</p>
       <button  planner-dir="addEvent">Add This to Your Day!</button>
     </div>
   </div>

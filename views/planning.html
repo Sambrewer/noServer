@@ -11,16 +11,16 @@
   <section>
     <div class="planningTabWrapper">
       <div class="row">
-        <div class="col-md-2 planningTab" ui-sref="lodging">
+        <div tab-changer class="col-md-2 planningTab" ui-sref="lodging">
           <h2>Lodging</h2>
         </div>
-        <div class="col-md-2 planningTab" ui-sref="tours">
+        <div tab-changer class="col-md-2 planningTab" ui-sref="tours">
           <h2>Activities</h2>
         </div>
-        <div class="col-md-2 planningTab" ui-sref="camping">
+        <div tab-changer class="col-md-2 planningTab" ui-sref="camping">
           <h2>National Parks & Monuments</h2>
         </div>
-        <div class="col-md-2 planningTab" ui-sref="planner">
+        <div tab-changer class="col-md-2 planningTab" ui-sref="planner">
           <h2>Weekly Planner</h2>
         </div>
       </div>
@@ -35,10 +35,18 @@
                   <p class="teaserText">{{location.desc}}</p>
                 </div>
               </div>
-              <h1 class="teaserInfo">Click on an Image to learn more!</h1>
             </div>
           </section>
         </ui-view>
+        <div class="weekPlanWrap">
+          <div>
+            <div class="day">
+              <ul class='eventlist'>
+
+              </ul>
+            </div>
+          </div>
+        </div>
         <footer-dir></footer-dir>
       </div>
     </div>

@@ -2,13 +2,9 @@
 
 angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
 
-  $stateProvider.state('home', {
+  $stateProvider.state('welcome', {
     url: '/',
-    templateUrl: '../views/home.html'
-  }).state('locations', {
-    url: '/locations/:id',
-    templateUrl: '../views/locations.html',
-    controller: 'infoCtrl'
+    templateUrl: '../views/welcome.html'
   }).state('planning', {
     url: '/planning',
     templateUrl: '../views/planning.html'
@@ -42,13 +38,21 @@ angular.module('app', ['ui.router']).config(function ($stateProvider, $urlRouter
 
 angular.module('app').directive('plannerDir', function () {
   return {
-    restrict: 'A',
+    templateUrl: '../views/directive-html/plannerDir.html',
+    restrict: 'AE',
+    controller: function controller($scope, tabsSvc) {
+      $scope.getPlaces = tabsSvc.getLodging();
+    },
     scope: {
+      eventp: '=',
       addEvent: '&'
     },
     link: function link(scope, element, attributes) {
+      // var list = document.getElementById('#eventList')
       element.on('click', function () {
-        $(this).innerHtml('.day');
+        var newEvent = element.parent().clone();
+        $('.eventList').append(newEvent);
+        console.log($('.eventList'));
       });
     }
   };
@@ -138,6 +142,12 @@ angular.module('app').directive('imgDir', function () {
       element.on('mouseleave', function () {
         element.css('opacity', '0.8');
       });
+      element.on('mouseover', function () {
+        element.css('color', 'brown');
+      });
+      element.on('mouseleave', function () {
+        element.css('color', '#444');
+      });
     }
   };
 });
@@ -147,6 +157,24 @@ angular.module('app').directive('navBar', function () {
   return {
     restrict: 'AE',
     templateUrl: "../views/directive-html/navBar.html"
+  };
+});
+'use strict';
+
+angular.module('app').directive('tabChanger', function () {
+  return {
+    restrict: 'A',
+    link: function link(scope, element, attributes) {
+      element.on('mouseover', function () {
+        element.css('border-left', '5px solid brown').css('border-right', '5px solid brown').css('border-radius', '10px').css('cursor', 'pointer');
+      });
+      element.on('mouseleave', function () {
+        element.css('border', 'none');
+      });
+      element.on('focus', function () {
+        element.css('border-left', '5px solid brown').css('border-right', '5px solid brown').css('border-radius', '10px').css('cursor', 'pointer');
+      });
+    }
   };
 });
 'use strict';
@@ -362,22 +390,22 @@ angular.module('app').service('tabsSvc', function () {
     name: 'Mesa Verde National Park',
     img: '../../images/parks/mvm.png'
   }, {
-    name: 'Grand Gulch National Monument',
+    name: 'Grand Gulch Monument',
     img: '../../images/parks/ggm.png'
   }, {
-    name: 'Hovenweep National Monument',
+    name: 'Hovenweep Ruins',
     img: '../../images/parks/hwm.png'
   }, {
-    name: 'Natural Bridges National Monument',
+    name: 'Natural Bridges Monument',
     img: '../../images/parks/nbm.png'
   }, {
     name: 'Navajo National Monument',
     img: '../../images/parks/nm.png'
   }, {
-    name: 'Rainbow Bridge National Monument',
+    name: 'Rainbow Bridge Monument',
     img: '../../images/parks/rbm.png'
   }, {
-    name: 'Bears Ears National Monument',
+    name: 'Bears Ears Monument',
     img: '../../images/parks/bem.png'
   }];
   this.getLodging = function () {

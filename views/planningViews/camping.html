@@ -1,9 +1,9 @@
 <section class="tabSection">
   <div ng-repeat="park in parks" class="tabWrapper">
-    <div tabs-dir class="tabInfo">
-      <img img-dir src="{{park.img}}" alt="picture of the park/Monument">
+    <div img-dir class="tabInfo">
+      <img src="{{park.img}}" alt="picture of the park/Monument">
       <h1>{{park.name}}</h1>
+      <button planner-dir="addEvent">Add This to Your Day!</button>
     </div>
-    <button  planner-dir="addEvent">Add This to Your Day!</button>
   </div>
 </section>

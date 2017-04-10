@@ -122,15 +122,15 @@ angular.module('app').service('tabsSvc', function() {
       img: '../../images/parks/mvm.png'
     },
     {
-      name: 'Grand Gulch National Monument',
+      name: 'Grand Gulch Monument',
       img: '../../images/parks/ggm.png'
     },
     {
-      name: 'Hovenweep National Monument',
+      name: 'Hovenweep Ruins',
       img: '../../images/parks/hwm.png'
     },
     {
-      name: 'Natural Bridges National Monument',
+      name: 'Natural Bridges Monument',
       img: '../../images/parks/nbm.png'
     },
     {
@@ -138,11 +138,11 @@ angular.module('app').service('tabsSvc', function() {
       img: '../../images/parks/nm.png'
     },
     {
-      name: 'Rainbow Bridge National Monument',
+      name: 'Rainbow Bridge Monument',
       img: '../../images/parks/rbm.png'
     },
     {
-      name: 'Bears Ears National Monument',
+      name: 'Bears Ears Monument',
       img: '../../images/parks/bem.png'
     }
   ]
