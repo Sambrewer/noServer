@@ -75,30 +75,21 @@ angular.module('app').controller('teaserCtrl', function ($scope, locationSvc) {
 angular.module('app').controller('lodgingCtrl', function ($scope, tabsSvc, $stateParams) {
   $scope.listedEvents = tabsSvc.getListedEvents();
   $scope.lodging = tabsSvc.getLodging();
-  $scope.activities = tabsSvc.getTours();
-  $scope.parks = tabsSvc.getParks();
-  // $scope.listedEvents.push($scope.lodging)
-  // $scope.listedEvents.push($scope.activities)
-  // $scope.conditions = $stateParams;
-  console.log($stateParams.name + " HELLO");
   $scope.list = [];
-  // $scope.addStuff = function() {
+  console.log($scope.listedEvents);
   for (var i = 0; i < $scope.listedEvents.length; i++) {
+
     if ($scope.listedEvents[i].name === $stateParams.name) {
       $scope.list.push($scope.listedEvents[i]);
+      console.log($scope.listedEvents[i].name, $stateParams.name);
       return $scope.list;
     }
   }
-  // console.log($stateParams.name);
-  // console.log($scope.list)
-  // console.log($scope.listedEvents);
-  // }()
 });
 'use strict';
 
-angular.module('app').controller('toursCtrl', function ($scope, tabsSvc) {
+angular.module('app').controller('toursCtrl', function ($scope, tabsSvc, $stateParams) {
   $scope.tours = tabsSvc.getTours();
-  console.log($scope.tours);
 });
 'use strict';
 
@@ -430,13 +421,14 @@ angular.module('app').service('tabsSvc', function () {
     for (var i = 0; i < lodging.length; i++) {
       allEvents.push(lodging[i]);
     }
-    for (var j = 0; i < tours.length; i++) {
+    for (var j = 0; j < tours.length; j++) {
       allEvents.push(tours[j]);
     }
-    for (var k = 0; i < monuments.length; k++) {
+    for (var k = 0; k < monuments.length; k++) {
       allEvents.push(monuments[k]);
     }
     return allEvents;
+    console.log(allEvents);
   };
 });
 'use strict';

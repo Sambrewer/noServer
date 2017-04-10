@@ -154,18 +154,19 @@ angular.module('app').service('tabsSvc', function() {
     return tours;
   }
   this.getParks = function() {
-    return monuments
+    return monuments;
   }
   this.getListedEvents = function() {
     for (var i = 0; i < lodging.length; i++) {
       allEvents.push(lodging[i]);
     }
-    for (var j = 0; i < tours.length; i++) {
+    for (var j = 0; j < tours.length; j++) {
       allEvents.push(tours[j]);
     }
-    for (var k = 0; i < monuments.length; k++) {
-      allEvents.push(monuments[k])
+    for (var k = 0; k < monuments.length; k++) {
+      allEvents.push(monuments[k]);
     }
     return allEvents;
+    console.log(allEvents)
   }
 })
